@@ -1,10 +1,11 @@
 /*
- * Copyright (c) 2022 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -12,10 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-// This file uses Experimental APIs.
-// Caution: Experimental APIs can change in the future or may be removed entirely.
-@file:OptIn(ExperimentalAnimationApi::class)
 
 package com.example.superheroes
 
@@ -42,10 +39,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -60,6 +58,7 @@ import com.example.superheroes.model.Hero
 import com.example.superheroes.model.HeroesRepository
 import com.example.superheroes.ui.theme.SuperheroesTheme
 
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun HeroesList(
     heroes: List<Hero>,
@@ -78,7 +77,8 @@ fun HeroesList(
         enter = fadeIn(
             animationSpec = spring(dampingRatio = DampingRatioLowBouncy)
         ),
-        exit = fadeOut()
+        exit = fadeOut(),
+        modifier = modifier
     ) {
         LazyColumn {
             itemsIndexed(heroes) { index, hero ->
@@ -108,7 +108,7 @@ fun HeroListItem(
     modifier: Modifier = Modifier
 ) {
     Card(
-        elevation = 2.dp,
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
         modifier = modifier,
     ) {
         Row(
@@ -120,11 +120,11 @@ fun HeroListItem(
             Column(modifier = Modifier.weight(1f)) {
                 Text(
                     text = stringResource(hero.nameRes),
-                    style = MaterialTheme.typography.h3
+                    style = MaterialTheme.typography.displaySmall
                 )
                 Text(
                     text = stringResource(hero.descriptionRes),
-                    style = MaterialTheme.typography.body1
+                    style = MaterialTheme.typography.bodyLarge
                 )
             }
             Spacer(Modifier.width(16.dp))
@@ -164,7 +164,7 @@ fun HeroPreview() {
 fun HeroesPreview() {
     SuperheroesTheme(darkTheme = false) {
         Surface (
-            color = MaterialTheme.colors.background
+            color = MaterialTheme.colorScheme.background
         ) {
             /* Important: It is not a good practice to access data source directly from the UI.
             In later units you will learn how to use ViewModel in such scenarios that takes the

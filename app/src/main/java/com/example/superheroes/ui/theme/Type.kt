@@ -1,10 +1,11 @@
 /*
- * Copyright (c) 2022 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *     https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,7 +16,7 @@
 
 package com.example.superheroes.ui.theme
 
-import androidx.compose.material.Typography
+import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -27,25 +28,30 @@ val Cabin = FontFamily(
     Font(R.font.cabin_regular, FontWeight.Normal),
     Font(R.font.cabin_bold, FontWeight.Bold)
 )
-
 // Set of Material typography styles to start with
 val Typography = Typography(
-    defaultFontFamily = Cabin,
-    h1 = TextStyle(
+
+    bodyLarge = TextStyle(
+        fontFamily = Cabin,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    ),
+
+    displayLarge = TextStyle(
+        fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
         fontSize = 30.sp
     ),
-    h2 = TextStyle(
+    displayMedium = TextStyle(
+        fontFamily = Cabin,
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp
     ),
-    h3 = TextStyle(
+    displaySmall = TextStyle(
+        fontFamily = Cabin,
         fontWeight = FontWeight.Bold,
         fontSize = 20.sp
-    ),
-
-    body1 = TextStyle(
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
     )
 )
