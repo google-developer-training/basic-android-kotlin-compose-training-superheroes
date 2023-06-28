@@ -1,8 +1,8 @@
 Superheroes app
 =================================
 
-Material themeing is used to display a list of super heroes in this app. 
-The app also demonstrates simple aminations.
+Material theming is used to display a list of superheroes in this app. 
+The app also demonstrates simple animations.
 
 
 Pre-requisites
