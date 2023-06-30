@@ -66,8 +66,7 @@ class MainActivity : ComponentActivity() {
             data source as a dependency and exposes heroes.
              */
             val heroes = HeroesRepository.heroes
-            HeroesList(heroes = heroes, Modifier.padding(it))
-
+            HeroesList(heroes = heroes, contentPadding = it)
         }
     }
 

@@ -29,6 +29,7 @@ import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -63,6 +64,7 @@ import com.example.superheroes.ui.theme.SuperheroesTheme
 fun HeroesList(
     heroes: List<Hero>,
     modifier: Modifier = Modifier,
+    contentPadding: PaddingValues = PaddingValues(0.dp),
 ) {
     val visibleState = remember {
         MutableTransitionState(false).apply {
@@ -80,7 +82,7 @@ fun HeroesList(
         exit = fadeOut(),
         modifier = modifier
     ) {
-        LazyColumn {
+        LazyColumn(contentPadding = contentPadding) {
             itemsIndexed(heroes) { index, hero ->
                 HeroListItem(
                     hero = hero,
