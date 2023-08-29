@@ -141,7 +141,7 @@ private fun setUpEdgeToEdge(view: View, darkTheme: Boolean) {
         Build.VERSION.SDK_INT >= 29 -> Color.Transparent.toArgb()
         Build.VERSION.SDK_INT >= 26 -> Color(0xFF, 0xFF, 0xFF, 0x63).toArgb()
         // Min sdk version for this app is 24, this block is for SDK versions 24 and 25
-        else -> Color(0x00,0x00, 0x00, 0x50).toArgb()
+        else -> Color(0x00, 0x00, 0x00, 0x50).toArgb()
     }
     window.navigationBarColor = navigationBarColor
     val controller = WindowCompat.getInsetsController(window, view)
