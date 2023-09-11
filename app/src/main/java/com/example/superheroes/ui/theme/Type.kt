@@ -28,9 +28,9 @@ val Cabin = FontFamily(
     Font(R.font.cabin_regular, FontWeight.Normal),
     Font(R.font.cabin_bold, FontWeight.Bold)
 )
+
 // Set of Material typography styles to start with
 val Typography = Typography(
-
     bodyLarge = TextStyle(
         fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
@@ -38,7 +38,6 @@ val Typography = Typography(
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     ),
-
     displayLarge = TextStyle(
         fontFamily = Cabin,
         fontWeight = FontWeight.Normal,
