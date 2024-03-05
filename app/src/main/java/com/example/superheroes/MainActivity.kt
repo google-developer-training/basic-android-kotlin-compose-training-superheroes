@@ -36,8 +36,8 @@ import com.example.superheroes.ui.theme.SuperheroesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             SuperheroesTheme {
                 // A surface container using the 'background' color from the theme
